@@ -8,7 +8,7 @@ import com.ipn.mx.dominio.entidades.Evento;
 import com.ipn.mx.dominio.repositorios.EventoRepository;
 import com.ipn.mx.servicios.EventoService;
 
-
+@Service
 public class EventoServiceImpl implements EventoService {
     @Autowired
     private EventoRepository eventoRepository;
@@ -21,5 +21,8 @@ public class EventoServiceImpl implements EventoService {
     public Evento read(Long id) {
         return eventoRepository.findById(id).orElse(null);
     }
-   
+    @Override
+    public List<Evento> readByNombre(String nombre) {
+        return eventoRepository.findByNombre(nombre); // Implementación del método
+    }
 }
