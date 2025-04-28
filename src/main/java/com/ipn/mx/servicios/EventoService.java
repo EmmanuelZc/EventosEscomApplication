@@ -7,5 +7,4 @@ public interface EventoService {
     public List<Evento> readAll();
     public Evento read(Long id);
     public List<Evento> readByNombre(String nombre);
-    
 }
